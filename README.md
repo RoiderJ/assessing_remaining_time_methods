@@ -1,4 +1,4 @@
-# Assessing the Performance of Remaining Time Prediction Models for Business Process Data
+# Assessing the Performance of Remaining Time Prediction Models for Business Processes
 
 ## Prepare Data
 
