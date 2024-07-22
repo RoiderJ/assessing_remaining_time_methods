@@ -2,24 +2,33 @@
 
 ## Prepare Data
 
-Running the file ```prepare_datasets.py``` performs the following steps:
+Running the file ```prepare_datasets.py [dataset] [input dataset location] [prefixes location]``` performs the following steps:
 - Split dataset into training, validation, and test sets
 - Calculate timestamp related features
-- Prepare data for PGT-Net and save to disk
-- Prepare data for DA-LSTM and save to disk
+- Prepare prefix data for PGT-Net and save to disk
+- Prepare prefix data for DA-LSTM and save to disk
+
+The input parameters are as follows:
+```
+- dataset: Name of the event log, excluding file extension
+- input dataset location: General information like the data split are stored into this folder
+- prefixes location: Folder to which the prefixes for training are saved.
+```
 
 Example:
-```python prepare_datasets.py bpic2015_1 data/datasets/ data/data/preprocessed/```
+```python prepare_datasets.py bpic2015_1 data/datasets/ data/preprocessed/```
 
 ## Run Experiments
 
 To start experiment, run the following command:
 ```python main.py [dataset] [model_type] [seed]```
 
+```
 - dataset: dataset name (e.g., bpic2015_1, helpdesk, ...)
 - model_type: model type (e.g., dalstm; xgboost: xboost using square error criterion; xgboostl1: xgboost using absolute 
 error criterion; graphgps: PGT-Net)
 - seed: random seed
+```
 
 Example:
 ```python main.py bpic2015_1 dalstm 0```
